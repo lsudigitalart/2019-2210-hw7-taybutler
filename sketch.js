@@ -38,50 +38,47 @@ function draw() {
 
     var currentTime = millis();
 
-    noStroke();
-    //fill(100,100,100);
     frameRate(3);
     //sky
     if (playTime > 20000 && playTime < 22000) {
-        tint(random(0,255), random(0,255), random(0,255));
+        tint(random(255,255), random(50,255), random(50,255));
     }
     if (playTime > 25600 && playTime < 27000) {
-        tint(random(0,255), random(0,255), random(0,255));
+        tint(random(255,255), random(50,255), random(50,255));
     }
     if (playTime > 30000 && playTime < 33000) {
-        tint(random(0,255), random(0,255), random(0,255));
+        tint(random(255,255), random(50,255), random(50,255));
     }
     if (playTime > 35000 && playTime < 38000) {
-        tint(random(0,255), random(0,255), random(0,255));
+        tint(random(255,255), random(50,255), random(50,255));
     }
-    if (playTime > 42000 && playTime < 52000) {
-        tint(random(0,255), random(0,255), random(0,255));
+    if (playTime > 42000 && playTime < 51500) { //long one
+        tint(random(255,255), random(50,255), random(50,255));
     }
-    if (playTime > 52000 && playTime < 54000) {
-        tint(random(0,255), random(0,255), random(0,255));
+    if (playTime > 52000 && playTime < 55000) {
+        tint(random(255,255), random(50,255), random(50,255));
     }
-    if (playTime > 58000 && playTime < 59000) {
-        tint(random(0,255), random(0,255), random(0,255));
+    if (playTime > 58000 && playTime < 60000) {
+        tint(random(255,255), random(50,255), random(50,255));
     }
-    if (playTime > 62000 && playTime < 65000) {
-        tint(random(0,255), random(0,255), random(0,255));
+    if (playTime > 63000 && playTime < 66000) {
+        tint(random(255,255), random(50,255), random(50,255));
     }
-    if (playTime > 68000 && playTime < 70000) {
-        tint(random(0,255), random(0,255), random(0,255));
+    if (playTime > 68000 && playTime < 71000) {
+        tint(random(255,255), random(50,255), random(50,255));
     }
-    if (playTime > 73000 && playTime < 83000) {
-        tint(random(0,255), random(0,255), random(0,255));
+    if (playTime > 75000 && playTime < 82900) {
+        tint(random(255,255), random(50,255), random(50,255));
     }
-    if (playTime > 84000 && playTime < 87000) {
-        tint(random(0,255), random(0,255), random(0,255));
+    if (playTime > 85000 && playTime < 87000) {
+        tint(random(255,255), random(50,255), random(50,255));
     }
     if (playTime > 90000 && playTime < 92000) {
-        tint(random(0,255), random(0,255), random(0,255));
+        tint(random(255,255), random(50,255), random(50,255));
     }
-    if (playTime > 95000 && playTime < 97000) {
-        tint(random(0,255), random(0,255), random(0,255));
+    if (playTime > 96000 && playTime < 98000) {
+        tint(random(255,255), random(50,255), random(50,255));
     }
-    //square(1300,700);
     image(sky, 0, 0, 1300, 700);
     noTint();
 
