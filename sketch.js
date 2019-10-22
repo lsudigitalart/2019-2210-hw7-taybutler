@@ -17,14 +17,16 @@ function setup() {
     createCanvas(1300,700);
 
     amp = new p5.Amplitude();
-
-    if (song.isLoaded()) {
-        loadTime = millis();
-        print(loadTime);
-        song.play();
-      }
 }
 
+function mousePressed() {
+if (song.isLoaded()) {
+    loadTime = millis();
+    print(loadTime);
+    song.play();
+  }
+  
+}
 function draw() {
     background(237, 106, 24);
 
@@ -34,51 +36,54 @@ function draw() {
 
     var currentTime = millis();
 
+    noStroke();
+    //fill(100,100,100);
+    frameRate(3);
     //sky
-    if (currentTime > 20000 && currentTime < 23000) {
+    if (playTime > 20000 && playTime < 23000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 26000 && currentTime < 28000) {
+    if (playTime > 26000 && playTime < 28000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 30000 && currentTime < 33000) {
+    if (playTime > 30000 && playTime < 33000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 35000 && currentTime < 39000) {
+    if (playTime > 35000 && playTime < 39000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 42000 && currentTime < 51000) {
+    if (playTime > 42000 && playTime < 51000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 52000 && currentTime < 54000) {
+    if (playTime > 52000 && playTime < 54000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 58000 && currentTime < 59000) {
+    if (playTime > 58000 && playTime < 59000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 62000 && currentTime < 65000) {
+    if (playTime > 62000 && playTime < 65000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 68000 && currentTime < 70000) {
+    if (playTime > 68000 && playTime < 70000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 73000 && currentTime < 83000) {
+    if (playTime > 73000 && playTime < 83000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 84000 && currentTime < 87000) {
+    if (playTime > 84000 && playTime < 87000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 90000 && currentTime < 92000) {
+    if (playTime > 90000 && playTime < 92000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (currentTime > 95000 && currentTime < 97000) {
+    if (playTime > 95000 && playTime < 97000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-
+    //square(1300,700);
     image(sky, 0, 0, 1300, 700);
     noTint();
 
-    
+    frameRate(30);
     //ocean
     noStroke();
     fill(44, 113, 209);
