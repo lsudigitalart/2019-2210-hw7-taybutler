@@ -1,6 +1,7 @@
 var song;
 var playTime, loadTime;
 var amp, level;
+var fft;
 
 var palms;
 var sky;
@@ -10,13 +11,14 @@ var x = 0;
 function preload() {
     song = loadSound("piratejet.mp3");
     palms = loadImage('palms.png');
-    sky = loadImage('sky.jpg');
+    sky = loadImage('orange.jpg');
   }
 
 function setup() {
     createCanvas(1300,700);
 
     amp = new p5.Amplitude();
+    fft = new p5.FFT();
 }
 
 function mousePressed() {
@@ -40,19 +42,19 @@ function draw() {
     //fill(100,100,100);
     frameRate(3);
     //sky
-    if (playTime > 20000 && playTime < 23000) {
+    if (playTime > 20000 && playTime < 22000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (playTime > 26000 && playTime < 28000) {
+    if (playTime > 25600 && playTime < 27000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
     if (playTime > 30000 && playTime < 33000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (playTime > 35000 && playTime < 39000) {
+    if (playTime > 35000 && playTime < 38000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
-    if (playTime > 42000 && playTime < 51000) {
+    if (playTime > 42000 && playTime < 52000) {
         tint(random(0,255), random(0,255), random(0,255));
     }
     if (playTime > 52000 && playTime < 54000) {
@@ -98,20 +100,28 @@ function draw() {
     arc(x, 480, 90, 90, 0, PI, OPEN);
     triangle(x - 10, 420, x - 10, 480, x + 30, 460);
 
+    var spectrum = fft.analyze();
+    var trebleVol = fft.getEnergy("treble");
+    var midVol = fft.getEnergy("mid");
+    var bassVol = fft.getEnergy("bass");
+
     //stars
-    stroke(225);
-    strokeWeight(5);
-    point(100,100);
-    point(250,320);
-    point(400, 200);
-    point(800,230);
-    point(680, 124);
-    point(959, 245);
-    point(1100, 332);
-    point(990, 323);
-    point(203, 349);
-    point(1100, 122);
-    point(90, 12);
-    point(450, 300);
-    point(500, 390);
+    noStroke();
+    fill('white');
+
+    let size = map (trebleVol, 1, 0.1, 0, 0.1);
+
+    ellipse(100,100, size, size);
+    ellipse(250,320, size, size);
+    ellipse(400, 200, size, size);
+    ellipse(800,230, size, size);
+    ellipse(680, 124, size, size);
+    ellipse(959, 245, size, size);
+    ellipse(1100, 332, size, size);
+    ellipse(990, 323, size, size);
+    ellipse(203, 349, size, size);
+    ellipse(1100, 122, size, size);
+    ellipse(90, 12, size, size);
+    ellipse(450, 300, size, size);
+    ellipse(500, 390, size, size);
 }
